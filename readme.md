@@ -11,17 +11,37 @@
 
 ## Installation
 1. Cloner le projet 
-2. Installer les dépendances 
-    - Backend : `cd back && npm install` (react, react-router-dom)
-    - Frontend : `cd front && npm install` (cors, dotenv, express, mongoose)
-3. Créer un fichier `.env` dans /back : 
-    - PORT
-    - DB_URI
+
+2. Installer les dépendances :
+
+```bash
+cd back && npm install
+cd front && npm install
+```
+
+3. Créer un fichier `.env` dans `/back` : 
+    - PORT=<VOTRE_PORT>
+    - DB_URI=<VOTRE_URI_MONGODB>
 
 ## Procédures de déploiement
-- `npm run build` : Compilation du code
-- `npm run start` : Lancement du backend
-- ` `: Migration de la BDD
 
-## Tests de validation
-- Aller sur http://localhost:3000 → l’app doit s’afficher
+### Back-end 
+- Répertoire racine : `/back`
+- Commande de construction : 
+```bash
+npm install
+```
+- Lancement du serveur :
+```bash
+node ./app.js
+```
+
+### Front-end
+- Répertoire racine : `/front`
+- Compilation du code :
+```bash
+npm run build
+```
+- Les fichiers de production seront générés dans le dossier `dist/`.
+- Répertoire de publication : `front/dist`
+
