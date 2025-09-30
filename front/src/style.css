@@ -1,0 +1,84 @@
+*{
+    list-style: none;
+}
+
+h1, h2{
+    text-align: center;
+}
+
+#add{
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom : 50px;
+
+    div{
+        display: flex;
+        gap:15px
+    }
+}
+
+ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap : 25px;
+    padding : 0;
+    
+    .post-it{
+        width : 200px;
+        height : 200px;
+        margin: auto;
+        position: relative;
+
+        div{
+            filter: grayscale(60%);
+            padding : 10px ;
+            text-align: end;
+
+            span{
+                cursor: pointer;
+
+                &:hover{
+                    font-weight: 700;
+                }
+            }
+        }
+        p{
+            margin : 20px
+        }
+
+        .edit{
+            position: absolute;
+            bottom : 0;
+            right : 0;
+            cursor: pointer;
+
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+
+}
+
+#edit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding : 25px 5px;
+    justify-content: center;
+
+
+    .radio{
+        display: flex;
+        flex-wrap: wrap;
+        gap : 5px
+    }
+    .button{
+        display: flex;
+        gap: 5px;
+    }
+}
