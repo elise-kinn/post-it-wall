@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
-import PostItPage from './assets/pages/postitPage'
+import PostItPage from './pages/postitPage'
 
 function App() {
   return (
