@@ -9,10 +9,10 @@
 
 ## Endpoints 
 ```
-- Création de la note                        POST /postit
-- Affichage de toutes les notes              GET /postit
-- Mettre à jour la note (texte ou couleur)   PATCH /postit/:id 
-- Supprimer la note                          DELETE /postit/:id
+- Création de la note                        POST /posts
+- Affichage de toutes les notes              GET /posts
+- Mettre à jour la note (texte ou couleur)   PATCH /posts/:id 
+- Supprimer la note                          DELETE /posts/:id
 ```
 ## Schéma de base de donnée
 - id
