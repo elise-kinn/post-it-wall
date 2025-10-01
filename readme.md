@@ -24,7 +24,7 @@ Chaque post-it peut être **personnalisé** par sa couleur et son contenu, offra
 - **Modifier un post-it** : cliquer sur Modifier pour changer le contenu déjà collé.
 - **Interface simple et intuitive** : champs de saisie, choix de couleur via boutons radio, et rendu visuel immédiat.
 
-## 📊 Infrastructures techniquues
+## 📊 Infrastructures techniques
 - BDD : MongoDB
 
 ## 📂 Structure du projet 
@@ -47,8 +47,8 @@ Chaque post-it peut être **personnalisé** par sa couleur et son contenu, offra
 /front
     /src
         /assets
-            /components
-            /pages
+        /components
+        /pages
         App.jsx
         main.jsx
         style.css
@@ -85,8 +85,8 @@ cd front && npm install
 
 Créer un fichier `.env` dans `/back`
 ```bash
-PORT=<VOTRE_PORT>
-DB_URI=<VOTRE_URI_MONGODB>
+PORT=<ton_port>
+DB_URI=<Lien_vers_ta_base_MongoDB_Atlas>
 ```
 
 ### 4. Lancer le front-end
@@ -122,20 +122,23 @@ node ./app.js
 ```
 
 4. Dans l’onglet Environment Variables, ajouter :
-    - PORT=10000 (ou la valeur par défaut de Render)
-    - DB_URI=<Lien_vers_ta_base_MongoDB_Atlas>
+``` bash
+PORT=3000
+DB_URI=<Lien_vers_ta_base_MongoDB_Atlas>
+```
+5. Lancer le déploiement
 
 ### Front-end : Netlify
 1. Aller sur Netlify (https://www.netlify.com) et créer un nouveau site depuis Git.
 2. Choisir ton dépôt GitHub.
 3. Configurer les options de build :
 - Branch to deploy: `main`
-- Répertoire racine : `front`
+- Base directory : `front`
 - Build command :
 ```bash
 npm run build
 ```
-- Publish directory
+- Publish directory :
 ```bash
 front/dist
 ```

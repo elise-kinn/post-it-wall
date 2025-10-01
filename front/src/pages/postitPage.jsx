@@ -13,7 +13,7 @@ const PostItPage = () => {
 
         const fetchPostIt = async () => { // AFFICHAGE
             try {
-                const res = await fetch("http://localhost:3000/api/v1/posts") //fetch de l'API
+                const res = await fetch(`${import.meta.env.VITE_API_URL}/api/v1/posts`) //fetch de l'API
                 if(!res.ok) throw new Error('Erreur Réseau') // Gestion des erreurs
                 const data = await res.json() // fetch des données
                 if(isMounted){
@@ -39,7 +39,7 @@ const PostItPage = () => {
 
     const deletePost = async (id) => { // SUPPRESSION 
         try {
-            const req = await fetch(`http://localhost:3000/api/v1/posts/${id}`, { method: 'DELETE'})
+            const req = await fetch(`${import.meta.env.VITE_API_URL}/api/v1/posts/${id}`, { method: 'DELETE'})
             if(!req.ok) return new Error('Impossible de supprimer la tâche')
             setPosts(prev => prev.filter(el => el._id !== id)) // Mettre à jour l'array posts pour supprimer le post it correspondant à l'id
             
@@ -50,7 +50,7 @@ const PostItPage = () => {
 
     const addPost = async (content, color) => {
         try {
-            const req = await fetch('http://localhost:3000/api/v1/posts', { 
+            const req = await fetch(`${import.meta.env.VITE_API_URL}/api/v1/posts`, { 
                 method: 'POST',
                 headers: { "Content-Type": 'application/json' },
                 body: JSON.stringify({ content, color })
@@ -67,7 +67,7 @@ const PostItPage = () => {
 
     const editPost = async (id, content, color) => {
         try {
-            const req = await fetch(`http://localhost:3000/api/v1/posts/${id}`, { 
+            const req = await fetch(`${import.meta.env.VITE_API_URL}/api/v1/posts/${id}`, { 
                 method: 'PATCH',
                 headers: { "Content-type": "application/json"},
                 body: JSON.stringify({ content, color })
