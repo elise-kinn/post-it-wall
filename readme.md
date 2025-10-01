@@ -26,6 +26,9 @@ Chaque post-it peut être **personnalisé** par sa couleur et son contenu, offra
 
 ## 📊 Infrastructures techniques
 - BDD : MongoDB
+- Front-end : React / Vite
+- Back-end : Node.JS / Express
+- Déploiement : Netlify (Front) / Render (Back)
 
 ## 📂 Structure du projet 
 ### Back-end
@@ -83,25 +86,31 @@ cd front && npm install
 
 ### 3. Configuration des variables d'environnement 
 
-Créer un fichier `.env` dans `/back`
+Créer un fichier `.env` dans `/back` et insérer :
 ```bash
 PORT=<ton_port>
 DB_URI=<Lien_vers_ta_base_MongoDB_Atlas>
 ```
 
-### 4. Lancer le front-end
+Créer un fichier `.env` dans `/front` et insérer :
+```bash
+VITE_API_URL=http://localhost:3000
+```
+
+### 4. Lancer le back-end
+```bash
+cd back
+node ./app.js
+```
+Lancez le serveur sur http://localhost:3000.
+
+### 5. Lancer le front-end
 ```bash
 cd front
 npm run dev
 ```
 L'application est disponible sur http://localhost:5173.
 
-### 4. Lancer le back-end
-```bash
-cd back
-nodemon ./app.js
-```
-Lancez le serveur sur http://localhost:3000.
 
 ## 🚀 Procédures de déploiement
 
@@ -142,5 +151,9 @@ npm run build
 ```bash
 front/dist
 ```
-4. Lancer le déploiement
-5. Rendez-vous sur l'URL qui vous avez renseigné (exemple : https://post-it-wall.netlify.app)
+4. Dans l’onglet Environment Variables, ajouter :
+``` bash
+VITE_API_URL=<url_de_ton_api_backend>
+```
+5. Lancer le déploiement
+6. Rendez-vous sur l'URL qui vous avez renseigné (exemple : https://post-it-wall.netlify.app)
